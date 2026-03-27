@@ -44,9 +44,9 @@ body {
 .animate-delay-300 { animation-delay: 0.3s; opacity: 0; }
 .animate-delay-400 { animation-delay: 0.4s; opacity: 0; }
 
-@keyframes pulse-soft {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.75; }
+@keyframes breathe-path {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.06); }
 }
 
 .topo-lines {
