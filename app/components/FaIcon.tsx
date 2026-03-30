@@ -16,6 +16,10 @@ import {
   faPeopleGroup,
   faMountain,
   faEnvelope,
+  faFlask,
+  faLandmark,
+  faBuilding,
+  faSeedling,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faInstagram,
@@ -37,6 +41,10 @@ const icons: Record<string, IconProp> = {
   "people-group": faPeopleGroup,
   mountain: faMountain,
   envelope: faEnvelope,
+  flask: faFlask,
+  landmark: faLandmark,
+  building: faBuilding,
+  seedling: faSeedling,
   instagram: faInstagram,
   linkedin: faLinkedin,
   whatsapp: faWhatsapp,

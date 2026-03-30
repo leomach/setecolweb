@@ -2,6 +2,7 @@ import Image from "next/image";
 import FaIcon from "./components/FaIcon";
 import AntasSvg from "./components/AntasSvg";
 import ImpactTicker from "./components/ImpactTicker";
+import AudiencePanels from "./components/AudiencePanels";
 
 const navLinks = [
   { label: "Início", href: "#inicio" },
@@ -86,22 +87,42 @@ const trails = [
   { name: "Pessoas", bg: "bg-agreste", icon: "people-group" as const, iconColor: "text-navy" },
 ];
 
-const partnerGroups = [
+const helixPillars = [
   {
-    category: "Aceleradores & Fomento",
-    partners: ["Sebrae", "Sesc", "Porto Digital", "Armazém da Criatividade", "Sala do Empreendedor", "AGEFEPE", "Entre outras organizações de fomento locais e nacionais"],
+    icon: "flask" as const,
+    accentColor: "bg-teal",
+    numColor: "text-teal",
+    iconColor: "text-teal",
+    iconBg: "bg-teal/10",
+    title: "Academia",
+    description: "Instituições de ensino e pesquisa que formam talentos e produzem conhecimento aplicado ao desenvolvimento regional.",
   },
   {
-    category: "Academia",
-    partners: ["IFPE", "UPE", "AESGA", "UFAPE", "FIC", "Entre outras faculdades locais"],
+    icon: "landmark" as const,
+    accentColor: "bg-cyan-soft",
+    numColor: "text-cyan-soft",
+    iconColor: "text-cyan-soft",
+    iconBg: "bg-cyan-soft/10",
+    title: "Governo & Editais",
+    description: "Poder público e agências de fomento que viabilizam políticas, programas e recursos para impulsionar a inovação.",
   },
   {
-    category: "Governo & Editais",
-    partners: ["Facepe", "Sudene", "Banco do Nordeste"],
+    icon: "building" as const,
+    accentColor: "bg-agreste",
+    numColor: "text-agreste",
+    iconColor: "text-agreste",
+    iconBg: "bg-agreste/10",
+    title: "Iniciativa Privada",
+    description: "Empresas e empreendedores que investem no ecossistema local, gerando oportunidades e absorvendo novos talentos.",
   },
   {
-    category: "Iniciativa Privada",
-    partners: ["Baterias Moura", "Ferreira Costa", "Solar Coca-Cola"],
+    icon: "seedling" as const,
+    accentColor: "bg-petroleum",
+    numColor: "text-petroleum",
+    iconColor: "text-petroleum",
+    iconBg: "bg-petroleum/10",
+    title: "Aceleradores & Fomento",
+    description: "Organizações de suporte que conectam, capacitam e aceleram projetos desde a ideação até a consolidação no mercado.",
   },
 ];
 
@@ -113,15 +134,15 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-8">
           <a href="#inicio" className="flex items-center gap-3 shrink-0">
             <Image
-              src="/Logo (fundo transparente) - Sete Colinas.png"
-              alt="Sete Colinas"
+              src="/7col-icon-logo.png"
+              alt="Comunidade Sete Colinas"
               width={48}
               height={48}
               className="object-contain"
               priority
             />
             <span className="text-white font-semibold text-lg leading-tight hidden sm:block">
-              Sete Colinas
+              Comunidade Sete Colinas
             </span>
           </a>
 
@@ -202,37 +223,14 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-12">
               <span className="inline-block text-teal font-bold text-xs tracking-widest uppercase mb-3">
-                Para quem é a Sete Colinas?
+                Para quem é a Comunidade Sete Colinas?
               </span>
               <h2 className="text-navy text-3xl md:text-4xl font-bold">
                 Um ecossistema feito para você
               </h2>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              {audiences.map((a) => (
-                <div
-                  key={a.title}
-                  className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all group"
-                >
-                  <div className="relative h-56 w-full overflow-hidden">
-                    <Image
-                      src={a.image}
-                      alt={a.title}
-                      fill
-                      className={`object-cover ${a.imagePosition || "object-center"} transition-transform duration-500 group-hover:scale-110`}
-                    />
-                    <div className="absolute top-4 left-4 w-10 h-10 rounded-xl bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-sm">
-                      <FaIcon name={a.icon} className={`text-lg ${a.iconColor}`} />
-                    </div>
-                  </div>
-                  <div className="p-8">
-                    <h3 className="text-navy text-xl font-bold mb-3">{a.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{a.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <AudiencePanels items={audiences} />
           </div>
         </section>
 
@@ -300,7 +298,7 @@ export default function Home() {
                 Governança Circular
               </span>
               <h2 className="text-white text-3xl md:text-4xl font-bold mb-4">
-                Como funciona a Sete Colinas?
+                Como funciona a Comunidade Sete Colinas?
               </h2>
               <p className="text-white/60 max-w-xl mx-auto">
                 Sem hierarquia rígida. Cada pessoa entra pelo nível que faz
@@ -355,37 +353,43 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-12">
               <span className="inline-block text-teal font-bold text-xs tracking-widest uppercase mb-3">
-                Hélice Quádrupla
+                Quadrupla Hélice
               </span>
               <h2 className="text-navy text-3xl md:text-4xl font-bold mb-4">
                 Ecossistema Integrado
               </h2>
               <p className="text-gray-500 max-w-xl mx-auto">
-                A força da Sete Colinas está na conexão entre todos os pilares
+                A força da Comunidade Sete Colinas está na conexão entre todos os pilares
                 do desenvolvimento regional.
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {partnerGroups.map((group) => (
+            <div className="max-w-3xl mx-auto">
+              {helixPillars.map((pillar, i) => (
                 <div
-                  key={group.category}
-                  className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100"
+                  key={pillar.title}
+                  className="flex items-center gap-6 md:gap-10 border-b border-gray-200 py-8 last:border-b-0 group"
                 >
-                  <h3 className="text-teal font-bold text-xs uppercase tracking-widest mb-4">
-                    {group.category}
-                  </h3>
-                  <ul className="space-y-2">
-                    {group.partners.map((p) => (
-                      <li
-                        key={p}
-                        className="text-navy font-medium text-sm flex items-center gap-2"
-                      >
-                        <span className="w-1.5 h-1.5 rounded-full bg-agreste inline-block" />
-                        {p}
-                      </li>
-                    ))}
-                  </ul>
+                  {/* Número decorativo */}
+                  <span
+                    className={`text-[80px] md:text-[100px] font-black leading-none select-none shrink-0 w-[72px] md:w-[96px] text-right opacity-10 ${pillar.numColor} group-hover:opacity-20 transition-opacity`}
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+
+                  {/* Linha de acento vertical */}
+                  <div className={`w-1 self-stretch rounded-full ${pillar.accentColor} opacity-60 shrink-0`} />
+
+                  {/* Conteúdo */}
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className={`w-9 h-9 ${pillar.iconBg} rounded-lg flex items-center justify-center shrink-0`}>
+                        <FaIcon name={pillar.icon} className={`text-base ${pillar.iconColor}`} />
+                      </div>
+                      <h3 className="text-navy font-bold text-lg">{pillar.title}</h3>
+                    </div>
+                    <p className="text-gray-500 text-sm leading-relaxed">{pillar.description}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -445,8 +449,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-3">
             <Image
-              src="/Logo (fundo transparente) - Sete Colinas.png"
-              alt="Sete Colinas"
+              src="/7col-icon-logo.png"
+              alt="Comunidade Sete Colinas"
               width={36}
               height={36}
               className="object-contain"

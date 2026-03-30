@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sete Colinas — Comunidade de Inovação e Tecnologia de Garanhuns",
+  title: "Comunidade Sete Colinas — Comunidade de Inovação e Tecnologia de Garanhuns",
   description:
     "Conectamos Academia, Empresas, Governo e Startups para impulsionar a inteligência local no Agreste Meridional. Inteligência local. Negócios Glocais.",
 };

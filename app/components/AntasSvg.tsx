@@ -42,7 +42,7 @@ export default function AntasSvg() {
           <g
             key={i}
             className="transition-transform duration-500 ease-out"
-            style={{ transformOrigin: "center", transformBox: "fill-box" }}
+            style={{ transformOrigin: "50% 50%", transformBox: "view-box" }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = `scale(${layers[i].hoverScale})`;
             }}
