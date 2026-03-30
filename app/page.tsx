@@ -1,6 +1,7 @@
 import Image from "next/image";
 import FaIcon from "./components/FaIcon";
 import AntasSvg from "./components/AntasSvg";
+import ImpactTicker from "./components/ImpactTicker";
 
 const navLinks = [
   { label: "Início", href: "#inicio" },
@@ -10,27 +11,23 @@ const navLinks = [
   { label: "Parceiros", href: "#parceiros" },
 ];
 
-const impactNumbers = [
-  { value: "8", label: "Anos de história e amadurecimento do ecossistema" },
-  { value: "+2.500", label: "Participantes na última edição do FING" },
-  { value: "+R$118K", label: "Captados em fomento e patrocínios" },
-  { value: "5", label: "Trilhas Ativas operando simultaneamente" },
-];
-
 const audiences = [
   {
     icon: "graduation-cap" as const,
     iconColor: "text-cyan-soft",
     title: "Estudantes e Academia",
     description:
-      "Conectando a força jovem de TI do IFPE, UPE e AESGA com o mercado de trabalho real.",
+      "Conectando a força estudantil com o mercado de trabalho real.",
+    image: "/estudantes-hackaton.webp",
   },
   {
     icon: "rocket" as const,
     iconColor: "text-agreste",
     title: "Empreendedores e Startups",
     description:
-      "Suporte desde a fase de ideação (Centelha) até negócios consolidados que buscam escala.",
+      "Suporte desde a fase de ideação até negócios consolidados que buscam escala.",
+    image: "/empresarios-conversando.webp",
+    imagePosition: "object-top",
   },
   {
     icon: "arrows-rotate" as const,
@@ -38,6 +35,8 @@ const audiences = [
     title: "Profissionais em Transição",
     description:
       "Espaço acolhedor para quem busca se inserir no mercado de inovação e tecnologia.",
+    image: "/palestrante-mulher.webp",
+    imagePosition: "object-top",
   },
 ];
 
@@ -48,7 +47,8 @@ const deliveries = [
     iconColor: "text-teal",
     title: "Conexão e Networking",
     description:
-      "Nosso pilar mais forte, eleito como prioridade número 1 pelos membros com 35 votos em nossa pesquisa interna.",
+      "Nosso pilar mais forte, eleito como prioridade número 1 pelos membros com maioria de votos em nossa pesquisa interna.",
+    image: "/saguao-fing.webp",
   },
   {
     icon: "trophy" as const,
@@ -57,6 +57,7 @@ const deliveries = [
     title: "Eventos de Alto Impacto",
     description:
       "Do FING (Festival de Inovação e Negócios de Garanhuns), passando pelo Startup Day, Colinas Tech e Trampolim.",
+    image: "/foto-do-publico.webp",
   },
   {
     icon: "satellite-dish" as const,
@@ -65,6 +66,7 @@ const deliveries = [
     title: "Radar de Oportunidades",
     description:
       "Apoio contínuo para aprovação de projetos em editais de fomento: Facepe, Centelha, Banco do Nordeste e mais.",
+    image: "/empresarios-assistindo.webp",
   },
 ];
 
@@ -87,11 +89,11 @@ const trails = [
 const partnerGroups = [
   {
     category: "Aceleradores & Fomento",
-    partners: ["Sebrae", "Sesc", "Porto Digital"],
+    partners: ["Sebrae", "Sesc", "Porto Digital", "Armazém da Criatividade", "Sala do Empreendedor", "AGEFEPE", "Entre outras organizações de fomento locais e nacionais"],
   },
   {
     category: "Academia",
-    partners: ["IFPE", "UPE", "AESGA"],
+    partners: ["IFPE", "UPE", "AESGA", "UFAPE", "FIC", "Entre outras faculdades locais"],
   },
   {
     category: "Governo & Editais",
@@ -154,17 +156,12 @@ export default function Home() {
                 Garanhuns — Agreste Meridional
               </span>
 
-              <h1 className="text-white text-3xl md:text-4xl font-bold leading-tight tracking-tight mb-5 animate-fade-in-up animate-delay-100">
-                Transformando o{" "}
-                <span className="text-agreste">Agreste Meridional</span> em um
-                Polo de Referência em{" "}
-                <span className="text-cyan-soft">Inovação e Tecnologia</span>.
+              <h1 className="text-white text-4xl md:text-6xl font-bold leading-tight tracking-tight mb-5 animate-fade-in-up animate-delay-100">
+                Inovação e tecnologia no coração do <span className="text-agreste">Agreste</span>.
               </h1>
 
-              <p className="text-white/70 text-base md:text-lg leading-relaxed max-w-xl mb-8 animate-fade-in-up animate-delay-200">
-                Conectamos Academia, Empresas, Governo e Startups para
-                impulsionar a inteligência local. Aqui, você não precisa sair
-                de Garanhuns para prosperar e ter uma carreira de impacto.
+              <p className="text-white/70 text-lg md:text-xl leading-relaxed max-w-xl mb-8 animate-fade-in-up animate-delay-200">
+                Impulsionando a inteligência local para transformar carreiras e negócios em Garanhuns.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start animate-fade-in-up animate-delay-300">
@@ -172,19 +169,19 @@ export default function Home() {
                   href="#participar"
                   className="bg-agreste hover:bg-[#8fa004] text-white font-bold px-8 py-4 rounded-full text-base transition-colors text-center"
                 >
-                  Entrar para a Comunidade
+                  Fazer Parte
                 </a>
                 <a
                   href="#eventos"
                   className="border-2 border-cyan-soft text-cyan-soft hover:bg-cyan-soft hover:text-navy font-bold px-8 py-4 rounded-full text-base transition-colors text-center"
                 >
-                  Conhecer o FING 2026
+                  FING 2026
                 </a>
               </div>
             </div>
 
             {/* Wrapper para fade-in; a animação de respiração fica nos paths internos */}
-            <div className="flex-shrink-0 w-80 md:w-[480px] animate-fade-in-up animate-delay-400">
+            <div className="flex-shrink-0 w-full max-w-sm md:max-w-2xl lg:max-w-3xl animate-fade-in-up animate-delay-400">
               <AntasSvg />
             </div>
           </div>
@@ -197,22 +194,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── IMPACT NUMBERS ── */}
-        <section className="bg-white py-16" id="numeros">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {impactNumbers.map((item) => (
-                <div
-                  key={item.label}
-                  className="bg-gradient-to-br from-teal to-petroleum rounded-2xl p-6 text-center text-white"
-                >
-                  <p className="text-4xl md:text-5xl font-bold mb-2">{item.value}</p>
-                  <p className="text-white/80 text-sm leading-snug">{item.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* ── IMPACT TICKER ── */}
+        <ImpactTicker />
 
         {/* ── FOR WHO ── */}
         <section className="bg-gray-50 py-20" id="proposito">
@@ -230,13 +213,23 @@ export default function Home() {
               {audiences.map((a) => (
                 <div
                   key={a.title}
-                  className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all"
+                  className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-gray-50 flex items-center justify-center mb-4">
-                    <FaIcon name={a.icon} className={`text-xl ${a.iconColor}`} />
+                  <div className="relative h-56 w-full overflow-hidden">
+                    <Image
+                      src={a.image}
+                      alt={a.title}
+                      fill
+                      className={`object-cover ${a.imagePosition || "object-center"} transition-transform duration-500 group-hover:scale-110`}
+                    />
+                    <div className="absolute top-4 left-4 w-10 h-10 rounded-xl bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-sm">
+                      <FaIcon name={a.icon} className={`text-lg ${a.iconColor}`} />
+                    </div>
                   </div>
-                  <h3 className="text-navy text-xl font-bold mb-3">{a.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{a.description}</p>
+                  <div className="p-8">
+                    <h3 className="text-navy text-xl font-bold mb-3">{a.title}</h3>
+                    <p className="text-gray-600 leading-relaxed">{a.description}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -255,16 +248,46 @@ export default function Home() {
               </h2>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-10">
               {deliveries.map((d) => (
-                <div key={d.title} className="flex flex-col gap-4">
-                  <div className={`w-14 h-14 ${d.iconBg} rounded-xl flex items-center justify-center`}>
-                    <FaIcon name={d.icon} className={`text-2xl ${d.iconColor}`} />
+                <div key={d.title} className="flex flex-col gap-6 group">
+                  <div className="relative h-64 w-full rounded-2xl overflow-hidden shadow-sm">
+                    <Image
+                      src={d.image}
+                      alt={d.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className={`absolute bottom-4 left-4 w-12 h-12 ${d.iconBg} backdrop-blur-md rounded-xl flex items-center justify-center`}>
+                      <FaIcon name={d.icon} className={`text-xl ${d.iconColor}`} />
+                    </div>
                   </div>
-                  <h3 className="text-navy text-xl font-bold">{d.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{d.description}</p>
+                  <div>
+                    <h3 className="text-navy text-xl font-bold mb-2">{d.title}</h3>
+                    <p className="text-gray-600 leading-relaxed">{d.description}</p>
+                  </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── IMAGE BANNER ── */}
+        <section className="relative h-[600px] md:h-[700px] overflow-hidden">
+          <Image
+            src="/fing-todo-o-publico.webp"
+            alt="Comunidade Sete Colinas"
+            fill
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-navy/40 flex items-center justify-center text-center px-6">
+            <div className="max-w-3xl">
+              <h2 className="text-white text-3xl md:text-5xl font-bold mb-4">
+                A força do interior que move o futuro
+              </h2>
+              <p className="text-white/90 text-lg md:text-xl font-medium">
+                Mais do que tecnologia, somos pessoas conectadas pelo propósito de transformar o Agreste Meridional.
+              </p>
             </div>
           </div>
         </section>
