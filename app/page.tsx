@@ -27,8 +27,8 @@ const audiences = [
     title: "Empreendedores e Startups",
     description:
       "Suporte desde a fase de ideação até negócios consolidados que buscam escala.",
-    image: "/empresarios-conversando.webp",
-    imagePosition: "object-top",
+    image: "/empresarios-conversando1.webp",
+    imagePosition: "object-center",
   },
   {
     icon: "arrows-rotate" as const,
@@ -36,7 +36,7 @@ const audiences = [
     title: "Profissionais em Transição",
     description:
       "Espaço acolhedor para quem busca se inserir no mercado de inovação e tecnologia.",
-    image: "/palestrante-mulher.webp",
+    image: "/palestrante-mulher1.webp",
     imagePosition: "object-top",
   },
 ];
