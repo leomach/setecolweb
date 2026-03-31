@@ -20,6 +20,8 @@ import {
   faLandmark,
   faBuilding,
   faSeedling,
+  faSackDollar,
+  faChalkboardUser,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faInstagram,
@@ -45,6 +47,8 @@ const icons: Record<string, IconProp> = {
   landmark: faLandmark,
   building: faBuilding,
   seedling: faSeedling,
+  "sack-dollar": faSackDollar,
+  "chalkboard-user": faChalkboardUser,
   instagram: faInstagram,
   linkedin: faLinkedin,
   whatsapp: faWhatsapp,

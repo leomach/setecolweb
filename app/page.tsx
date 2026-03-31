@@ -3,6 +3,7 @@ import FaIcon from "./components/FaIcon";
 import AntasSvg from "./components/AntasSvg";
 import ImpactTicker from "./components/ImpactTicker";
 import AudiencePanels from "./components/AudiencePanels";
+import NewsletterForm from "./components/NewsletterForm";
 
 const navLinks = [
   { label: "Início", href: "#inicio" },
@@ -159,7 +160,9 @@ export default function Home() {
           </nav>
 
           <a
-            href="#participar"
+            href="https://chat.whatsapp.com/Ekj18WPbhMvIqO0DpPnlVZ"
+            target="_blank"
+            rel="noopener noreferrer"
             className="shrink-0 bg-agreste hover:bg-[#8fa004] text-white text-sm font-bold px-5 py-2.5 rounded-full transition-colors"
           >
             QUERO FAZER PARTE
@@ -172,10 +175,10 @@ export default function Home() {
         <section id="inicio" className="relative bg-navy topo-lines overflow-hidden">
           <div className="relative max-w-7xl mx-auto px-6 py-16 md:py-24 flex flex-col md:flex-row items-center gap-10 md:gap-16">
             <div className="flex-1 text-center md:text-left">
-              <span className="inline-flex items-center gap-2 bg-agreste/20 text-agreste text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-5 animate-fade-in-up">
+              {/* <span className="inline-flex items-center gap-2 bg-agreste/20 text-agreste text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-5 animate-fade-in-up">
                 <FaIcon name="mountain" className="text-agreste" />
                 Garanhuns — Agreste Meridional
-              </span>
+              </span> */}
 
               <h1 className="text-white text-4xl md:text-6xl font-bold leading-tight tracking-tight mb-5 animate-fade-in-up animate-delay-100">
                 Inovação e tecnologia no coração do <span className="text-agreste">Agreste</span>.
@@ -187,13 +190,15 @@ export default function Home() {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start animate-fade-in-up animate-delay-300">
                 <a
-                  href="#participar"
+                  href="https://chat.whatsapp.com/Ekj18WPbhMvIqO0DpPnlVZ"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-agreste hover:bg-[#8fa004] text-white font-bold px-8 py-4 rounded-full text-base transition-colors text-center"
                 >
                   Fazer Parte
                 </a>
                 <a
-                  href="#eventos"
+                  href="/fing-2026"
                   className="border-2 border-cyan-soft text-cyan-soft hover:bg-cyan-soft hover:text-navy font-bold px-8 py-4 rounded-full text-base transition-colors text-center"
                 >
                   FING 2026
@@ -415,7 +420,9 @@ export default function Home() {
               Junte-se a mais de 2.500 pessoas que estão construindo o futuro do Agreste.
             </p>
             <a
-              href="#participar"
+              href="https://chat.whatsapp.com/Ekj18WPbhMvIqO0DpPnlVZ"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block bg-white text-agreste font-bold px-10 py-4 rounded-full text-base hover:bg-gray-100 transition-colors"
             >
               QUERO FAZER PARTE
@@ -438,19 +445,7 @@ export default function Home() {
                 Receba notícias quentes sobre editais, vagas e inovação no Agreste.
               </p>
             </div>
-            <form className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
-              <input
-                type="email"
-                placeholder="Seu melhor e-mail"
-                className="bg-white/10 border border-white/20 rounded-full px-5 py-3 text-white placeholder-white/40 text-sm focus:outline-none focus:border-cyan-soft w-full sm:w-64"
-              />
-              <button
-                type="submit"
-                className="bg-agreste hover:bg-[#8fa004] text-white font-bold px-6 py-3 rounded-full text-sm transition-colors whitespace-nowrap"
-              >
-                Assinar
-              </button>
-            </form>
+            <NewsletterForm />
           </div>
         </div>
 
