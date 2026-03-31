@@ -94,7 +94,7 @@ const helixPillars = [
     numColor: "text-teal",
     iconColor: "text-teal",
     iconBg: "bg-teal/10",
-    title: "Academia",
+    title: "Instituições de Ensino & Pesquisa",
     description: "Instituições de ensino e pesquisa que formam talentos e produzem conhecimento aplicado ao desenvolvimento regional.",
   },
   {
@@ -364,7 +364,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="max-w-3xl mx-auto">
+            <div className="max-w-4xl mx-auto">
               {helixPillars.map((pillar, i) => (
                 <div
                   key={pillar.title}
@@ -372,7 +372,8 @@ export default function Home() {
                 >
                   {/* Número decorativo */}
                   <span
-                    className={`text-[80px] md:text-[100px] font-black leading-none select-none shrink-0 w-[72px] md:w-[96px] text-right opacity-10 ${pillar.numColor} group-hover:opacity-20 transition-opacity`}
+                    className={`text-[80px] md:text-[100px] font-black leading-none select-none shrink-0 w-24 md:w-32 text-right opacity-10 ${pillar.numColor} group-hover:opacity-20 transition-opacity`}
+                    /* Borda para destacar o número */
                   >
                     {String(i + 1).padStart(2, "0")}
                   </span>
@@ -382,7 +383,7 @@ export default function Home() {
 
                   {/* Conteúdo */}
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-3 mb-2">
+                    <div className="flex flex-col md:flex-row items-start md:items-center gap-3 mb-2">
                       <div className={`w-9 h-9 ${pillar.iconBg} rounded-lg flex items-center justify-center shrink-0`}>
                         <FaIcon name={pillar.icon} className={`text-base ${pillar.iconColor}`} />
                       </div>
