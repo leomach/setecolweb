@@ -371,12 +371,20 @@ export default function Home() {
                   className="flex items-center gap-6 md:gap-10 border-b border-gray-200 py-8 last:border-b-0 group"
                 >
                   {/* Número decorativo */}
-                  <span
-                    className={`text-[80px] md:text-[100px] font-black leading-none select-none shrink-0 w-24 md:w-32 text-right opacity-10 ${pillar.numColor} group-hover:opacity-20 transition-opacity`}
-                    /* Borda para destacar o número */
-                  >
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
+                  <div className={`relative text-[80px] md:text-[100px] font-black leading-none select-none shrink-0 w-24 md:w-32 text-right ${pillar.numColor}`}>
+                    {/* Fill com opacidade + hover */}
+                    <span className="opacity-10 group-hover:opacity-20 transition-opacity">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    {/* Borda com opacidade suave */}
+                    <span
+                      className="absolute inset-0 opacity-40 group-hover:opacity-60 transition-opacity"
+                      style={{ WebkitTextFillColor: "transparent", WebkitTextStroke: "1.5px currentColor" }}
+                      aria-hidden="true"
+                    >
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                  </div>
 
                   {/* Linha de acento vertical */}
                   <div className={`w-1 self-stretch rounded-full ${pillar.accentColor} opacity-60 shrink-0`} />
